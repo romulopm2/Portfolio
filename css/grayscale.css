@@ -272,11 +272,11 @@ body {
   border-radius: 5px;
 }
 #conteudo{
+font-family:'calibri';
   padding-top: 30px;
 }
 
 #conteudo .btn{
-font-family:"calibri";
   margin-top: 20px;  
 
 }
