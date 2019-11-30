@@ -11,12 +11,14 @@ a();
 function a() {
 b = setInterval(function(){
 
-    if(slidesPos[slideOn]==3){
-      slidesPos[slideOn]=1;
+  for(var i=0;i<3;i++){
+    if(slidesPos[i]==3){
+      slidesPos[i]=1;
     }else{
-      slidesPos[slideOn]++;
+      slidesPos[i]++;
     }
-    currentSlide(slideOn+1,slidesPos[slideOn]);    
+  }
+    currentSlide(0,slidesPos[0]);    
   
 },4000);
 }
@@ -24,29 +26,44 @@ b = setInterval(function(){
 function currentSlide(elemento,picture) {
 opacity=1;
   phase=0;
+  slidesPos[elemento-1]=picture;
   var interval;
   var caminho = "img/slide/slid"+elemento+""+picture+".jpg";
   clearInterval(interval);
+
   interval=setInterval(function(){
       if(phase==0){
         opacity-=0.1;
-        document.getElementById("slid"+elemento).style.opacity=opacity;    
+
+        for(var i=1;i<=3;i++){
+
+          document.getElementById("slid"+i).style.opacity=opacity;    
+
+        }
+        
         if(opacity<=0.1){
 
           phase=1;
-          document.getElementById("slid"+elemento).style.backgroundImage = "url('"+caminho+"')"; 
+          for(var i=0;i<3;i++){
+          caminho = "img/slide/slid"+(i+1)+""+slidesPos[i]+".jpg";
+
+          document.getElementById("slid"+(i+1)).style.backgroundImage = "url('"+caminho+"')";     
+          
+        }
           //alert(document.getElementById("slid"+elemento).style.backgroundImage);
         }
       }else{
         opacity+=0.1;
-        document.getElementById("slid"+elemento).style.opacity=opacity;    
+        for(var i=1;i<=3;i++){
+          document.getElementById("slid"+i).style.opacity=opacity;    
+        }  
         if(opacity>=0.9){
           
           clearInterval(interval);
         }
       }
       },25);
-  slidesPos[elemento-1]=picture;
+  
   clearInterval(b);
   a();
   
