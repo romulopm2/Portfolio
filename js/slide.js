@@ -33,7 +33,7 @@ opacity=1;
 
   interval=setInterval(function(){
       if(phase==0){
-        opacity-=0.1;
+        opacity-=0.05;
 
         for(var i=1;i<=3;i++){
 
@@ -48,12 +48,18 @@ opacity=1;
           caminho = "img/slide/slid"+(i+1)+""+slidesPos[i]+".jpg";
 
           document.getElementById("slid"+(i+1)).style.backgroundImage = "url('"+caminho+"')";     
-          
-        }
+          for(var j=1;j<=3;j++){
+            if(slidesPos[i]==j){
+              document.getElementById("dot"+(i+1)+""+j).style.backgroundColor ='rgba(16,172,132,0.8)';
+            }else{
+              document.getElementById("dot"+(i+1)+""+j).style.backgroundColor ='rgba(100,100,100,0.6)';
+            }
+          }
+          }
           //alert(document.getElementById("slid"+elemento).style.backgroundImage);
         }
       }else{
-        opacity+=0.1;
+        opacity+=0.05;
         for(var i=1;i<=3;i++){
           document.getElementById("slid"+i).style.opacity=opacity;    
         }  
