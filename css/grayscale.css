@@ -329,6 +329,17 @@ body {
 #slid3{
   background-image: url("../img/slide/slid31.jpg");
 }
+#dot11{
+  background-color:rgba(16,172,132,0.8); 
+}
+
+#dot21{
+  background-color:rgba(16,172,132,0.8); 
+}
+
+#dot31{
+  background-color:rgba(16,172,132,0.8); 
+}
 
 p{
   font-family: "Minion";
