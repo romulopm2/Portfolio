@@ -1,8 +1,8 @@
-var slidesPos =[1,1,1];
+var slidesPos =[1,1,1,1,1];
 slideOn=0;
 function inicializar(){
   var caminho;
-  for(var i=0;i<3;i++){
+  for(var i=0;i<5;i++){
     caminho = "img/slide/slid"+i+"1.jpg";
     alert(document.getElementById("slid"+i+"").style.backgroundImage);
   }
@@ -11,7 +11,7 @@ a();
 function a() {
 b = setInterval(function(){
 
-  for(var i=0;i<3;i++){
+  for(var i=0;i<5;i++){
     if(slidesPos[i]==3){
       slidesPos[i]=1;
     }else{
@@ -35,16 +35,17 @@ opacity=1;
       if(phase==0){
         opacity-=0.05;
 
-        for(var i=1;i<=3;i++){
-
-          document.getElementById("slid"+i).style.opacity=opacity;    
+        for(var i=1;i<=5;i++){
+          
+          if(i == elemento || elemento == 0)
+            document.getElementById("slid"+i).style.opacity=opacity;    
 
         }
         
         if(opacity<=0.1){
 
           phase=1;
-          for(var i=0;i<3;i++){
+          for(var i=0;i<5;i++){
           caminho = "img/slide/slid"+(i+1)+""+slidesPos[i]+".jpg";
 
           document.getElementById("slid"+(i+1)).style.backgroundImage = "url('"+caminho+"')";     
@@ -60,8 +61,10 @@ opacity=1;
         }
       }else{
         opacity+=0.05;
-        for(var i=1;i<=3;i++){
-          document.getElementById("slid"+i).style.opacity=opacity;    
+        for(var i=1;i<=5;i++){
+            
+          if(i == elemento || elemento == 0)
+            document.getElementById("slid"+i).style.opacity=opacity;    
         }  
         if(opacity>=0.9){
           
