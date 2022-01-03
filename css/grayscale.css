@@ -382,6 +382,12 @@ border-radius: 90px;
   #phoneSlide{
     display: none;
   }
+  #carouselExampleControlsM{
+    display: none;
+  }
+  #carouselExampleControls{
+    display: block;
+  }
 }
 @media only screen and (max-width: 600px){
   #slideInfoR{
@@ -399,6 +405,13 @@ border-radius: 90px;
     display: none;
   }
   #phoneSlide{
+    display: block;
+  }
+ 
+  #carouselExampleControls{
+    display: none;
+  }
+  #carouselExampleControlsM{
     display: block;
   }
 }
@@ -424,6 +437,9 @@ border-radius: 90px;
   width: 1000px;
 }
 #carouselExampleControls{
+  background-color: transparent;
+}
+#carouselExampleControlsM{
   background-color: transparent;
 }
 h3{
