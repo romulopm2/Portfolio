@@ -362,7 +362,7 @@ border-radius: 90px;
   background-color:rgba(16,172,132,0.8); 
 }
 
-@media only screen and (min-width: 600px){
+@media only screen and (-webkit-min-device-pixel-ratio:0) and (min-width: 600px){
   
   #slideInfoR{
     position: absolute;
@@ -389,7 +389,7 @@ border-radius: 90px;
     display: block;
   }
 }
-@media only screen and (max-width: 600px){
+@media only screen and (-webkit-min-device-pixel-ratio:0) and (max-width: 600px){
   #slideInfoR{
     border-left: #10ac84 10px solid;
     padding-right: 8px;
